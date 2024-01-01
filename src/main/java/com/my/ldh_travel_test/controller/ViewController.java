@@ -3,10 +3,7 @@ package com.my.ldh_travel_test.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
-
-// 2014 수정완료
-// 2016 수정완료
-// 2016 수정완료
+// 하나의 프로젝트만 가져오기
 @Controller
 public class ViewController {
 	
