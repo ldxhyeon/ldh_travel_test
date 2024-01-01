@@ -3,6 +3,8 @@ package com.my.ldh_travel_test.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
+
+// test
 @Controller
 public class ViewController {
 	
