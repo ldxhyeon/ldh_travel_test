@@ -4,9 +4,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 
-// test
-// 하나의 프로젝트만 가져오기
-// 수정된
 @Controller
 public class ViewController {
 	
