@@ -1,8 +1,43 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="usert">
+
+
+
+	<select id="findById" parameterType="String" resultType="Usert">
+		SELECT * FROM usert 
+		WHERE id=#{id}
+	</select>
 	
-	<insert id="">
-		INSERT FROM usert
+	
+	
+	<select id="findByNickname" parameterType="String" resultType="Usert">
+		SELECT * FROM usert 
+		WHERE nickname=#{nickname}
+	</select>
+	
+	
+	
+	<insert id="save" parameterType="Usert">
+		INSERT INTO usert (
+			user_uuid,
+			id,
+			pw,
+			nickname,
+			addr1,
+			addr2,
+			activity,
+			created_date
+		)
+		VALUES (
+			#{user_uuid},
+			#{id},
+			MD5(#{pw}),
+			#{nickname},
+			#{addr1},
+			#{addr2},
+			#{activity},
+			SYSDATE()
+		)
 	</insert>
 
 </mapper>

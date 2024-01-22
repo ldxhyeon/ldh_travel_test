@@ -9,11 +9,13 @@
 <title>트립쉐어 로그인 테스트</title>
 <link rel="icon" href="./image/trip-logo-icon.png">
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<%@ include file="/WEB-INF/views/include/libt.jsp" %>
+
 
 <link rel="stylesheet" href="./css/all.min.css" />
 <link rel="stylesheet" href="./css/web.css" />
 
+<script src = "./js/logint.js"></script>
 
 </head>
 <body>
@@ -36,7 +38,7 @@
 					<input type="password" />
 					
 					<button>로그인</button>
-					<button class="gray-btn">회원가입</button>
+					<button id="go-register-btn" class="gray-btn">회원가입</button>
 				</div>
 			</section>
 			

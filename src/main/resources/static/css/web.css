@@ -79,81 +79,98 @@ header .menu-btn:hover {
 
 
 /*section  시작*/
-	.page-section {
-		padding-top:40px;
-	}	
-	
-	.page-title-text {
-		font-family: black;
-		font-size: 22px;
-	}
-	
-	.page-sub-title-txt {
-		color: #999;
-		margin-top: 2px;
-	}
+.page-section {
+	padding-top:40px;
+}	
+
+.page-title-text {
+	font-family: black;
+	font-size: 22px;
+}
+
+.page-sub-title-txt {
+	color: #999;
+	margin-top: 2px;
+}
 /*section  끝*/
 
 
 
 /*로그인 페이지 시작*/
-	.form-body {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-	}
-	
-	.form-box {
-		display: flex;
-		flex-direction: column;
-	}
-	
-	.form-box label {
-		font-size: 12px;
-		font-weight: 700;
-		color: #999;
-	}
-	
-	.form-box input {
-		width: 230px;
-		padding: 7px;
-		outline: none;
-		border: 1px solid #CDCDCD;
-		border-radius: 6px;
-		margin-top: 4px;
-		margin-bottom: 12px;
-	}
-	
-	.form-box button {
-		background-color: #222;
-		color: #fff;
-		font-size: 15px;
-		font-weight: 700;
-		border: 1px solid #dedede;
-		border-radius: 6px;
-		outline: none;
-		padding: 8px;
-		cursor: pointer;
-		transition-duration: 0.17s;
-		margin-top: 10px;
-	}
-	
-	.form-box button:hover {
-		background: #000;
-	}
+.form-body {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
 
-	.form-box .gray-btn {
-		background: #f2f2f2;
-		color: #222;
-	}
-	
-	.form-box .gray-btn:hover {
-		background: #ECECEC;
-	}
-	
+.form-box {
+	display: flex;
+	flex-direction: column;
+}
+
+.form-box label {
+	font-size: 12px;
+	font-weight: 700;
+	color: #999;
+}
+
+.form-box input {
+	width: 230px;
+	padding: 7px;
+	outline: none;
+	border: 1px solid #CDCDCD;
+	border-radius: 6px;
+	margin-top: 4px;
+	margin-bottom: 12px;
+}
+
+.form-box button {
+	background-color: #222;
+	color: #fff;
+	font-size: 15px;
+	font-weight: 700;
+	border: 1px solid #dedede;
+	border-radius: 6px;
+	outline: none;
+	padding: 8px;
+	cursor: pointer;
+	transition-duration: 0.17s;
+	margin-top: 10px;
+}
+
+.form-box button:hover {
+	background: #000;
+}
+
+.form-box .gray-btn {
+	background: #f2f2f2;
+	color: #222;
+}
+
+.form-box .gray-btn:hover {
+	background: #ECECEC;
+}
+
 /*로그인 페이지 끝*/
 
 
+/*체크박스 CSS 시작*/
+.tag-checkbox {
+	padding: 1px 10px;
+	font-size: 13px;
+	color: #999;
+	border: 1px solid #999;
+	border-radius: 6px;
+	cursor: pointer;
+	margin-right: 6px;
+}
+
+.tag-checkbox.active {
+	background-color: #222;
+	border: 1px solid #222;
+	color: #fff;
+}
+/*체크박스 CSS 끝*/
 
 
 
@@ -176,4 +193,23 @@ button.outline-btn:hover {
 }
 
 /*버튼 CSS* 끝*/
+
+
+
+
+.inp-result-txt {
+	font-size: 11px;
+	margin-bottom: 12px;
+	opacity: 0;
+}
+
+.inp-result-txt.ok {
+	color: #006DFF;
+	opacity: 1;
+}
+
+.inp-result-txt.no {
+	color: #E42300;
+	opacity: 1;
+}
 

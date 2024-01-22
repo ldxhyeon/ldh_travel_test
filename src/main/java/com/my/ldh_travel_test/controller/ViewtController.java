@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 
 @Controller
-public class ViewController {
+public class ViewtController {
 	
 	@GetMapping("/")
 	public String homet() {
@@ -13,9 +13,15 @@ public class ViewController {
 		return "homet";
 	}
 	
-	@GetMapping("login")
+	@GetMapping("logint")
 	public String login() {
 	
 		return "logint";
+	}
+	
+	@GetMapping("registert")
+	public String register() {
+	
+		return "registert";
 	}
 }
