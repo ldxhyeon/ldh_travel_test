@@ -3,6 +3,14 @@
 
 
 
+	<select id="findByIdAndPw" parameterType="Usert" resultType="Usert">
+		SELECT * FROM usert
+		WHERE 
+			id=#{id} 
+			AND 
+			pw=MD5(#{pw})
+	</select>
+
 	<select id="findById" parameterType="String" resultType="Usert">
 		SELECT * FROM usert 
 		WHERE id=#{id}

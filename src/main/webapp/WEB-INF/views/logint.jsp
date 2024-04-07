@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
     
     
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -33,11 +34,13 @@
 				<div class="form-box">
 					<div style="font-size:22px; font-weight: 700;margin-bottom: 20px;">로그인</div>
 					<label>아이디</label>
-					<input>
+					<input id="id">
 					<label>비밀번호</label>
-					<input type="password" />
+					<input id="pw" type="password" />
+					<div></div>
 					
-					<button>로그인</button>
+					
+					<button id="login-btn">로그인</button>
 					<button id="go-register-btn" class="gray-btn">회원가입</button>
 				</div>
 			</section>

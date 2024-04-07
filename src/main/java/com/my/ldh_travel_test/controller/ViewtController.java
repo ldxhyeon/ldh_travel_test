@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class ViewtController {
 	
 	@GetMapping("/")
-	public String homet() {
+	public String home() {
 	
 		return "homet";
 	}
@@ -24,4 +24,11 @@ public class ViewtController {
 	
 		return "registert";
 	}
+	
+	@GetMapping("add-shopt")
+	public String addShop() {
+	
+		return "add-shopt";
+	}
+	
 }

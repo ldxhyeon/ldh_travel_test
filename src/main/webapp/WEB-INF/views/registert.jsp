@@ -37,10 +37,6 @@
 					<div id="id-result" class="inp-result-txt"></div>
 					
 					
-					
-					
-					
-					
 					<label>비밀번호</label>
 					<input id="pw" type="password" placeholder="비밀번호"/>
 					

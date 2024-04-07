@@ -12,6 +12,10 @@ public class UsertService {
 	UsertDao usertDao;
 	
 	
+	public Usert findByIdAndPw(Usert usert) {
+		return usertDao.findByIdAndPw(usert);
+	}
+	
 	public Usert findByNickname(String nickname) {
 		return usertDao.findByNickname(nickname);
 	}
