@@ -57,7 +57,7 @@ $(document).ready(function(){
 		// 파이어베이스 초기화 하고 매개변수로 스토리지 코드 받음.
 		firebase.initializeApp(firebaseConfig);
 	}
-	//  Firebase Storage에 액세스할 수 있는 Storage 객체를 반환함.
+	//  Firebase Storage에 액세스할 수 있는 Storage 객체를 생성함.
 	var storage = firebase.storage();
 	
 
@@ -129,7 +129,7 @@ $(document).ready(function(){
 	// change:입력 요소의 내용이 변경되었을 때 실행
 	$('#img-file').on('change',async function(){
 		
-		// 파일 첫번째의 속성을 가져온다.
+		// 파일 첫번째의 속성을 할당온다.
 		file = $(this)[0].files[0];
 		
 		//이미지 미리보기 로직 아래 await 로직이랑 결과가 같은 로직
@@ -155,7 +155,7 @@ $(document).ready(function(){
 	
 	$('#test-upload-img-btn').on('click',async function(){
 		
-		// 파이어베이스 초기화와 , 이미지 속성을 넘김
+		// 파이어베이스 객체생성 , 이미지 속성을 넘김
 		var url = await uploadImgAndGetUrl(storage, file);
 		
 		alert(url);
@@ -223,7 +223,7 @@ $(document).ready(function(){
 	//업체등록 버튼 이벤트
 	$('#submit-btn').on('click',async function(){
 		
-		//이미지 업로드 하면 base64로 변환한 url을 콘솔출력 
+		//이미지 업로드 하면 base64로 변환한 url을 콘솔출력(테스트) 
 		var imgTags = $('.detail-base64-img');
 		$.each(imgTags,function(index,item){
 			var base64 = $(item).attr('src');
@@ -285,11 +285,13 @@ $(document).ready(function(){
 		var detailImgsUrl=[];
 		
 		
+		//해당 이미지 경로를 배열에 할당
 		var imgTags = $('.detail-base64-img');
 		$.each(imgTags,function(index,item){
 			var base64 = $(item).attr('src');
 			detailImgsBase64.push(base64);
 		});
+		
 		
 		for(var i = 0; i < detailImgsBase64.length; i++) {
 			var oneBase64 = detailImgsBase64[i];
@@ -339,7 +341,7 @@ function uploadBase64AndGetUrl($storage,$b64){
 		var now = Date.now();
 		// 파이어베이스 경로 지정을 한 후 sh_라는 하위폴더 생성
 		var ref = $storage.ref('shopt_image').child('sh_'+now);
-		// 파일 업로드시 b64데이터를 URL 형식으로 저장
+		// Base64 인코딩된 형태 일 경우 putString,파일 업로드시 b64데이터를 URL 형식으로 저장
 		ref.putString($b64,'data_url').then(function(snapshot){
 			//업로드 완료시 다운로드 하기
 			ref.getDownloadURL().then((url)=>{
@@ -357,16 +359,18 @@ function uploadBase64AndGetUrl($storage,$b64){
 
 function uploadImgAndGetUrl($storage,$file){
 	
+	//성공 상태로 바뀌면 then 매개변수에 할당 됨
 	return new Promise((resolve,reject)=>{
 		
 		// 현재 시간을 밀리초(milliseconds) 단위로 반환
 		var now = Date.now();
 		// 파이어베이스 경로 지정을 한 후 sh_라는 하위폴더 생성
 		var ref = $storage.ref('shopt_image').child('sh_'+now);
-		// put : 파일 업로드 , .then : 콜백함수
+		// 이미지 파일 자체를 업로드할때 put
 		ref.put($file).then(function(snapshot){
-			//업로드 완료시 다운로드 하기
+			//업로드 완료시 URL가져오기
 			ref.getDownloadURL().then((url)=>{
+				//호출 되면 promise 이행되며 호출한곳에 값을 반환 !
 				resolve(url);
 			});
 		 // catch : 실패시 콜백함수
